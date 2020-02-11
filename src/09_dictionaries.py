@@ -58,5 +58,4 @@ print(waypoints[0])
 # YOUR CODE HERE
 
 for waypoint in waypoints:
-  for k, v in waypoint.items():
-    print(f"{k}: {v}")
+    print(waypoint['lat'], waypoint['lon'], waypoint['name'])
