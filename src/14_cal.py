@@ -30,3 +30,26 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+date_input = sys.argv
+currentMonth = datetime.now().month
+currentYear = datetime.now().year
+
+
+def cal(*args):
+    print(args)
+    if args == ('f:/Software/Lambda/Projects/CSEU3/week1/Intro-Python-I/src/14_cal.py',):
+        calsun = calendar.TextCalendar(calendar.SUNDAY)
+        calsun_str = calsun.formatmonth(currentYear, currentMonth)
+        print(calsun_str)
+    elif len(args) == 2 and int(args[1]) < 13:
+          calsun = calendar.TextCalendar(calendar.SUNDAY)
+          calsun_str = calsun.formatmonth(currentYear, int(args[1]))
+          print(calsun_str)
+    elif len(args) == 3 and int(args[1]) < 13:
+          calsun = calendar.TextCalendar(calendar.SUNDAY)
+          calsun_str = calsun.formatmonth(int(args[2]),int(args[1]))
+          print(calsun_str)
+    else:
+          print("Expected input is python 14_cal.py [month] [year]") 
+
+cal(*date_input)
